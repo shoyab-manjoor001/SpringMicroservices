@@ -1,0 +1,29 @@
+server:
+  port: 8082
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/hotel_microservice_db
+    username: root
+    password: admin1
+
+  jpa:
+    hibernate:
+      ddl-auto: update # You can use 'update', 'create', 'create-drop', or 'none'
+    show-sql: true # Set this to 'true' to see SQL queries in the console
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect # Use the appropriate dialect for your database
+        format_sql: true # Pretty-print SQL in logs
+        use_sql_comments: true # Add comments to generated SQL
+  application:
+    name: HOTEL-SERVICE
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    enabled: true
